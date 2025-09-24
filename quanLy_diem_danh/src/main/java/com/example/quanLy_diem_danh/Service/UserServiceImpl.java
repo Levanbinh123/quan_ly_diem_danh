@@ -23,7 +23,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User updateUser(Long id, UserDto userDto) throws UserExcepion {
         User user = userRepository.findById(id).get();
-
         user.setFullName(userDto.getFullName());
         user.setEmail(userDto.getEmail());
         user.setPassword(userDto.getPassword());

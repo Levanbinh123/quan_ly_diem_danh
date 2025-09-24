@@ -33,11 +33,9 @@ public class SessionMapper {
                 .map(SessionMapper::toDto)
                 .collect(Collectors.toList());
     }
-
-    // Map List<DTO> → List<Entity>
-    public static List<Session> fromDtoList(List<SessionDto> sessionDtos) {
-        return sessionDtos.stream()
-                .map(SessionMapper::fromDto)
+    public static List<Session> toListEntity(List<SessionDto> sessiondtos) {
+        return sessiondtos.stream()
+                .map(SessionMapper ::fromDto)
                 .collect(Collectors.toList());
     }
 }

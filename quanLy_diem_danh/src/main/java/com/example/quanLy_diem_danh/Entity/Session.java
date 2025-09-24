@@ -8,6 +8,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Builder
@@ -29,4 +31,6 @@ public class Session {
     private LocalDateTime qrExpireTime;
     @Enumerated(EnumType.STRING)
     private StatusClass status;
+    @OneToMany(mappedBy = "session", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    List<Images> imagesList = new ArrayList<>();
 }

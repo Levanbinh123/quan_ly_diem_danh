@@ -25,9 +25,12 @@ public class ClassEmtity {
     private User teacher;
     private Integer totalSession;
     private LocalDateTime startTime;
+    private Integer maxStudents; //sinh vien toi da
+    private LocalDateTime registrationDeadline; // hạn đăng ký
     private LocalDateTime endTime;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<ClassStudent> students;
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+
     private List<Session> sessions;
 }

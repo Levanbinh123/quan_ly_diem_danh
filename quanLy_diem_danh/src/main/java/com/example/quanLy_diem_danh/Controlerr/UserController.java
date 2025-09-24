@@ -17,8 +17,8 @@ public class UserController {
     @Autowired
     private UserService userService;
     @GetMapping("/profile")
-    public User getUerByToken(@RequestHeader("Authorization") String token) throws UserExcepion {
-        return userService.getUserByToken(token);
+    public ResponseEntity<User> getUerByToken(@RequestHeader("Authorization") String token) throws UserExcepion {
+        return ResponseEntity.ok(userService.getUserByToken(token));
     }
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@RequestBody UserDto user, @RequestParam Long id) throws UserExcepion {
